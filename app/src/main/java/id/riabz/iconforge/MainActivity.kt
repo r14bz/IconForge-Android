@@ -154,7 +154,7 @@ class MainActivity : Activity() {
         root.addView(nav)
 
         val scroll = ScrollView(this).apply {
-            fillViewport = true
+            isFillViewport = true
             clipToPadding = false
             isVerticalScrollBarEnabled = true
             setPadding(0, 0, 0, dp(12))
@@ -163,7 +163,7 @@ class MainActivity : Activity() {
             orientation = LinearLayout.VERTICAL
             setPadding(dp(16), dp(8), dp(16), dp(20))
         }
-        scroll.addView(page, ScrollView.LayoutParams(-1, -2))
+        scroll.addView(page, FrameLayout.LayoutParams(-1, -2))
         root.addView(scroll, LinearLayout.LayoutParams(-1, 0, 1f))
         setContentView(root)
     }
@@ -345,7 +345,7 @@ class MainActivity : Activity() {
             setHintTextColor(MUTED)
             setTextColor(TEXT)
             textSize = 14f
-            singleLine = true
+            setSingleLine(true)
             setPadding(dp(14), 0, dp(14), 0)
             background = rounded(SURFACE, 13, 0xFF2B3952.toInt(), 1)
         }
